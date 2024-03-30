@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global This</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <script>
+        ;("use strict")
+person = {}
+Object.defineProperty(person, "ssn", {
+	configurable: false,
+	value: 123434,
+})
+
+// delete person.ssn
+// Object.defineProperty(person,"ssn",{
+//     configurable :true
+// })
+    </script>
+</body>
+</html>
