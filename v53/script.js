@@ -21,4 +21,4 @@ class Person {
 }
 let person = new Person("Aldo", "Wiranata")
 
-console.log(person.username)
+console.log(person.fullName)
