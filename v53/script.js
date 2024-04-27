@@ -22,3 +22,5 @@ class Person {
 let person = new Person("Aldo", "Wiranata")
 
 console.log(person.fullName)
+
+
