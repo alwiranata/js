@@ -1,0 +1,66 @@
+function Person(name) {
+	this.name = name
+}
+
+let p1 = new Person("aldo")
+console.log(p1 instanceof Person)
+
+//ES6
+
+class Person2 {
+	constructor(name) {
+		this.name = name
+	}
+}
+
+let p2 = new Person2("wiranata")
+console.log(p2 instanceof Person2)
+
+//instanceof operator dan pewarisan
+
+class Person3 {
+	constructor(name) {
+		this.name = name
+	}
+}
+
+class Employee extends Person3 {
+	constructor(name, title) {
+		super(name)
+		this.title = title
+	}
+}
+
+let p3 = new Employee()
+console.log(p3 instanceof Employee)
+console.log(p3 instanceof Person3)
+console.log(p3 instanceof Object)
+
+//ES6 symbol.hasInstance
+
+class Person4 {
+	constructor(name) {
+		this.name = name
+	}
+}
+
+let p4 = new Person4("aldo")
+console.log(Person4[Symbol.hasInstance](p4))
+
+//dengan metode statis
+
+class Person5 {
+	constructor(name) {
+		this.name = name
+	}
+}
+
+class Android extends Person5 {
+	static [Symbol.hasInstance]() {
+		return false
+	}
+}
+
+let a1 = new Android("samsung")
+console.log(a1 instanceof Android)
+console.log(a1 instanceof Person5)
