@@ -1,5 +1,5 @@
 function load(url) {
-	return new Promise(function (resolve, reject) {
+	return new Promise((resolve, reject) => {
 		const request = new XMLHttpRequest()
 		request.onreadystatechange = function (e) {
 			if (this.readyState == 4) {
@@ -15,18 +15,18 @@ function load(url) {
 	})
 }
 
-const url = "api.json"
+const api = "api.json"
 const btn = document.querySelector("#btnGet")
 const msg = document.querySelector("#message")
 
 btn.onclick = function () {
-	load(url).then(
+	load(api).then(
 		(response) => {
 			const result = JSON.parse(response)
-			msg.innerHTML = result.message
+			msg.innerHTML = result.Message
 		},
 		(error) => {
-			msg.innerHTML = `error menarik data HTTP/${error}`
+			msg.innerHTML = `Error: Gagal menarik data HTTP/${error}`
 		}
 	)
 }
