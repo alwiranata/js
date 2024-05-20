@@ -120,7 +120,7 @@ generateNumber(10)
 function getUser(userId) {
 	return new Promise((resolve, reject) => {
 		setTimeout(() => {
-			if (userId == 1) {
+			if (userId == 0) {
 				reject("Failed data")
 			} else {
 				resolve({
@@ -133,7 +133,7 @@ function getUser(userId) {
 }
 function getService(user) {
 	return new Promise((resolve, reject) => {
-		console.log(user.username)
+		console.log(user.Id)
 		setTimeout(() => {
 			resolve(["EMAIL", "CDN", "VPN"])
 		}, 1000)
@@ -149,7 +149,7 @@ function getServiceCost(service) {
 	})
 }
 
-getUser(0)
+getUser(1)
 	.then(getService)
 	.then(getServiceCost)
 	.then(console.log)
