@@ -1,4 +1,4 @@
-export let a = 10,
+export let a = 15,
 	b = 20,
 	result = 0
 
@@ -7,7 +7,7 @@ export function sum() {
 	return result
 }
 
-export function multiply() {
+export function multiply(a, b) {
 	result = a * b
 	return result
 }
