@@ -68,7 +68,7 @@ try {
 } catch (e) {
 	console.error(`Error :  ${e.message}`)
 }
-
+ 
 function tes() {
 	let log = function () {
 		console.log(pesan)
