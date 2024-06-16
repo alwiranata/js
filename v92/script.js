@@ -39,7 +39,7 @@ let employed = {
 }
 
 let {
-	id,
+	id,  
 	name,
 	name: {pw, firstName, lastName},
 } = employed
