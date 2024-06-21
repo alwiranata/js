@@ -30,4 +30,3 @@ let greetings = {
 }
 greetings.add("Aldo")
 console.log(greetings)
-
