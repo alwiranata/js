@@ -42,3 +42,5 @@ console.log(result)
 
 result = [].some((e) => e <= 0)
 console.log(result)
+
+console.log("thanks")
