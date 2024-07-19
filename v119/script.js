@@ -42,7 +42,7 @@ for (let i = 0; i < activity.length; i++) {
 console.table(activity)
 
 activity.forEach((activity) => {
-	activity.forEach((data) => {
+ 	activity.forEach((data) => {
 		console.log(data)
 	})
 })
