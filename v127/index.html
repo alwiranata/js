@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Slecting Element</title>
+    <script src="script.js"></script>
+</head>
+<body> 
+    <p id="my-element">Ini adalah sebuah paragraf</p>
+    <!-- contoh akses elemen dengan id -->
+     <script>
+        
+        let element = document.getElementById("my-element")
+        element.innerHTML="Hello world"
+        console.log(element)
+        console.log(element.innerHTML)
+     </script>
+    <!-- contoh akses element by getName -->
+    <p>
+        Rate service
+        <label for="rate">
+            <input type="radio" name="rate" id="very-good" value="very-good">
+            very-good
+        </label>
+        <label for="rate">
+            <input type="radio" name="rate" id="good" value="good">
+            Good
+        </label>
+        <label for="rate">
+            <input type="radio" name="rate" id="poor" value="Poor">
+            Poor
+        </label>
+        <label for="rate">
+            <input type="radio" name="rate" id="very-poor" value="very-Poor">
+            Very-Poor
+        </label>
+    </p>
+    <p>
+        <button id="btnRate">Submit</button>
+    </p>
+    <p id="output">
+
+    </p>
+    <script>
+        let btnRate = document.getElementById("btnRate")
+        let output = document.getElementById("output")
+        btnRate.addEventListener("click",function(){
+            let rate = document.getElementsByName("rate")
+            rate.forEach((item)=>{
+                
+                if(item.checked){
+                    
+                    output.innerHTML= `Pilihan anda adalah  : ${item.value}`
+                }
+            })
+        })
+    </script>
+
+    <!--contoh akses dengan tag name  -->
+    <h1>Javascript get element by tag name</h1>
+    <h2>Heading 1</h2>
+    <p>Ini adalah paragraf 1</p>
+    <h2>Heading2</h2>
+    <p>ini adalah paragraf 2</p>
+    <h2>Heading3</h2>
+    <p>ini adalah paragraf 3</p>
+    <button  type="button" id="btnCount">Count H2</button>
+    <script>
+        let btnCount = document.getElementById("btnCount")
+
+        btnCount.addEventListener('click',function(){
+            let h2 = document.getElementsByTagName("h2")
+            alert(`Jumlah heading : ${h2.length}`)
+        })
+    </script> 
+
+    <!-- get element by class name -->
+     <div>
+        <header>
+            <nav>
+                <ul id="menu">
+                    <li class="item">HTML</li>
+                    <li class="item">CSS</li>
+                    <li class="item highlight ">JS</li>
+                    <li class="item">TYPESCRIPT</li>
+                </ul>
+            </nav>
+        </header>
+        <h1>getElementByClassName</h1>
+        <section>
+            <article>
+                <h2 class="secondary">
+                    example 1
+                </h2>
+            </article>
+            <article>
+                <h2 class="secondary">
+                    example 2
+                </h2>
+            </article>
+        </section>
+     </div>
+     <script>
+        let menu = document.getElementById("menu")
+        let items = document.getElementsByClassName("item")
+        let data =  [].map.call(items,function(item){
+            return item.innerHTML
+        })
+        console.log(data)
+
+        let elements = document.getElementsByClassName('secondary')
+        let data2 = [].map.call(elements,function(element){
+            return element.innerHTML.trim()
+        })
+        console.log(data2)
+    </script>
+    <!-- contoh penggunaan  query selector -->
+     <div class="container">
+        <p>Ini adalah paragraf 1</p>
+        <p>Ini adalah paragraf 2</p>
+     </div>
+     <script>
+        const p = document.querySelector(".container p")
+        p.textContent =  "Hello World"
+
+     </script>
+     <script>
+        const p1 = document.querySelectorAll(".container p")
+        p1.forEach((p)=>{
+            p.innerHTML= "Hello world"
+        })
+     </script>
+</body>
+</html> 
