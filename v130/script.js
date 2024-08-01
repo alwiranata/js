@@ -20,7 +20,7 @@ function addItem() {
 	var text = document.createTextNode(
 		prompt("Masukkan  text untuk menambahkan : ")
 	)
-	node.appendChild(text)
+	node .appendChild(text)
     document.getElementById("myList").appendChild(node)
 
 }
