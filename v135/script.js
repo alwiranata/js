@@ -20,5 +20,5 @@ let nodes = apps.map((item) => {
 	return li
 })
 app.append(...nodes)
-
-console.log(app.textContent)
+app.append("Append() demo")
+console.log(app.append)
