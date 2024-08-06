@@ -28,3 +28,4 @@ this.addEventListener("load", () => {
 	logo.style.width = "100px"
 	logo.style.borderRadius = "30px"
 })
+console.log(body)
